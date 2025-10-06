@@ -1,4 +1,4 @@
-import { HtmlTypeEnum } from "../enums/content-type.enum"
+import { HtmlTypeEnum } from "../enums/html-type.enum"
 
 export type HtmlFormat = {
     type: HtmlTypeEnum;

@@ -1,2 +1,2 @@
-export * from './src/formats'; 
-export { convertMarkDownToHtmlFormat } from './src/convert-markdown-to-html-format'; 
+export { HtmlFormat, HtmlList } from './src/formats'; 
+export { convertMarkDownToHtmlFormat } from './src/convert-markdown-to-html-format';

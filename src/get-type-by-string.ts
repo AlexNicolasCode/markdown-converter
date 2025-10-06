@@ -7,9 +7,8 @@ export const getTypeByString = (line: string): HtmlTypeEnum => {
         [HtmlTypeEnum.H3]: (line: string) => line.startsWith('### '),
         [HtmlTypeEnum.H4]: (line: string) => line.startsWith('#### '),
         [HtmlTypeEnum.H5]: (line: string) => line.startsWith('##### '),
-        [HtmlTypeEnum.LIST]: (line: string) => line.startsWith('- '),
-        [HtmlTypeEnum.NUMBER_LIST]: (line: string) => /^\d+\.\s/.test(line),
-        [HtmlTypeEnum.TEXT]: (line: string) => line,
+        [HtmlTypeEnum.UL]: (line: string) => line.startsWith('- '),
+        [HtmlTypeEnum.OL]: (line: string) => /^\d+\.\s/.test(line),
     };
     for (const [lineType, check] of Object.entries(lineMapper)) {
         const result = check(line);
@@ -18,5 +17,5 @@ export const getTypeByString = (line: string): HtmlTypeEnum => {
         }
         return lineType as HtmlTypeEnum;
     }
-    return HtmlTypeEnum.TEXT;
+    return HtmlTypeEnum.P;
 }

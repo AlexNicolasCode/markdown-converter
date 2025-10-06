@@ -1,7 +1,8 @@
 export enum HtmlTypeEnum {
-    NUMBER_LIST = 'ol',
-    LIST = 'ul',
-    TEXT = 'p',
+    OL = 'ol',
+    UL = 'ul',
+    LI = 'li',
+    P = 'p',
     H1 = 'h1',
     H2 = 'h2',
     H3 = 'h3',

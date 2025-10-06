@@ -1,4 +1,4 @@
-export enum ContentTypeEnum {
+export enum HtmlTypeEnum {
     NUMBER_LIST = 'ol',
     LIST = 'ul',
     TEXT = 'p',

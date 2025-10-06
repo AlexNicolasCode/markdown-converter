@@ -1,6 +1,6 @@
-import { ContentTypeEnum } from "../enums/content-type.enum"
+import { HtmlTypeEnum } from "../enums/content-type.enum"
 
-export type CustomFormat = {
-    type: ContentTypeEnum;
+export type HtmlFormat = {
+    type: HtmlTypeEnum;
     content: string;
 }

@@ -12,9 +12,5 @@
     "Formatter"
   ],
   "author": "Alex Fernandes <contato.alexnicolas@gmail.com> (https://github.com/AlexNicolasCode)",
-  "license": "ISC",
-  "dependencies": {
-    "md-converter": "^1.0.3",
-    "md-transform": "^1.0.0"
-  }
+  "license": "ISC"
 }

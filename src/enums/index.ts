@@ -1,1 +1,1 @@
-export * from './content-type.enum';
+export * from './html-type.enum';

@@ -1,4 +1,4 @@
-import { HtmlTypeEnum } from "./enums/content-type.enum";
+import { HtmlTypeEnum } from "./enums/html-type.enum";
 
 export const cleanStringByType = (lineType: HtmlTypeEnum, line: string): string => {
     const lineMapper: Record<HtmlTypeEnum, (line: string) => string> = {

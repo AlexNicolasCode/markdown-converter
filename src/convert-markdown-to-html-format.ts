@@ -1,5 +1,5 @@
 import { cleanStringByType } from "./clean-line-by-type";
-import { HtmlTypeEnum } from "./enums/content-type.enum";
+import { HtmlTypeEnum } from "./enums/html-type.enum";
 import { HtmlFormat } from "./formats";
 import { getTypeByString } from "./get-type-by-string";
 

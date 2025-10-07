@@ -9,7 +9,7 @@ export const convertMarkDownToHtmlFormat = (content: string): HtmlFormat[] => {
     for (const line of content.split('\n')) {
         const type: HtmlTagEnum = getTypeByString(line);
         const content = cleanStringByType(type, line);
-        if (content === '') {
+        if (checkEmptyString(content)) {
             continue;
         }
         htmlElements.push({ type, content });

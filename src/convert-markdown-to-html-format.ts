@@ -9,6 +9,9 @@ export const convertMarkDownToHtmlFormat = (content: string): HtmlFormat[] => {
     for (const line of content.split('\n')) {
         const type: HtmlTagEnum = getTypeByString(line);
         const content = cleanStringByType(type, line);
+        if (content === '') {
+            continue;
+        }
         htmlElements.push({ type, content });
     }
     const listTypes = [HtmlTagEnum.UL, HtmlTagEnum.OL];

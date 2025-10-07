@@ -32,6 +32,7 @@ export const formatListElements = (unformattedHtmlElements: HtmlFormat[]): HtmlF
             olList.splice(0, olList.length);
             continue;
         }
+        htmlElements.push(element);
     }
     return htmlElements;
 }

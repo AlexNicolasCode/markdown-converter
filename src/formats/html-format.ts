@@ -1,12 +1,12 @@
-import { HtmlTypeEnum } from "../enums/html-type.enum"
+import { HtmlTagEnum } from "../enums/html-type.enum"
 
 export type HtmlList = {
-  type: HtmlTypeEnum.LI;
+  type: HtmlTagEnum.LI;
   content: string;
 }
 
 export type HtmlFormat = {
-    type: HtmlTypeEnum;
+    type: HtmlTagEnum;
     content?: string;
     list?: HtmlFormat[];
 }

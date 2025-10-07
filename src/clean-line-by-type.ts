@@ -1,16 +1,16 @@
-import { HtmlTypeEnum } from "./enums/html-type.enum";
+import { HtmlTagEnum } from "./enums/html-type.enum";
 
-export const cleanStringByType = (lineType: HtmlTypeEnum, line: string): string => {
-    const lineMapper: Record<HtmlTypeEnum, (line: string) => string> = {
-        [HtmlTypeEnum.H1]: (line: string) => line.replace('# ', ''),
-        [HtmlTypeEnum.H2]: (line: string) => line.replace('## ', ''),
-        [HtmlTypeEnum.H3]: (line: string) => line.replace('### ', ''),
-        [HtmlTypeEnum.H4]: (line: string) => line.replace('#### ', ''),
-        [HtmlTypeEnum.H5]: (line: string) => line.replace('##### ', ''),
-        [HtmlTypeEnum.UL]: (line: string) => line.replace('- ', ''),
-        [HtmlTypeEnum.OL]: (line: string) => line.replace(/^\d+\.\s/, ''),
-        [HtmlTypeEnum.LI]: (line: string) => line,
-        [HtmlTypeEnum.P]: (line: string) => line,
+export const cleanStringByType = (lineType: HtmlTagEnum, line: string): string => {
+    const lineMapper: Record<HtmlTagEnum, (line: string) => string> = {
+        [HtmlTagEnum.H1]: (line: string) => line.replace('# ', ''),
+        [HtmlTagEnum.H2]: (line: string) => line.replace('## ', ''),
+        [HtmlTagEnum.H3]: (line: string) => line.replace('### ', ''),
+        [HtmlTagEnum.H4]: (line: string) => line.replace('#### ', ''),
+        [HtmlTagEnum.H5]: (line: string) => line.replace('##### ', ''),
+        [HtmlTagEnum.UL]: (line: string) => line.replace('- ', ''),
+        [HtmlTagEnum.OL]: (line: string) => line.replace(/^\d+\.\s/, ''),
+        [HtmlTagEnum.LI]: (line: string) => line,
+        [HtmlTagEnum.P]: (line: string) => line,
     };
     const removeTypeIdentifier = lineMapper[lineType];
     if (!removeTypeIdentifier) {

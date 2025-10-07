@@ -1,4 +1,4 @@
-export enum HtmlTypeEnum {
+export enum HtmlTagEnum {
     OL = 'ol',
     UL = 'ul',
     LI = 'li',

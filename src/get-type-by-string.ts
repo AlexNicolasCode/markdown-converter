@@ -1,21 +1,21 @@
-import { HtmlTypeEnum } from "./enums/html-type.enum";
+import { HtmlTagEnum } from "./enums/html-type.enum";
 
-export const getTypeByString = (line: string): HtmlTypeEnum => {
+export const getTypeByString = (line: string): HtmlTagEnum => {
     const lineMapper = {
-        [HtmlTypeEnum.H1]: (line: string) => line.startsWith('# '),
-        [HtmlTypeEnum.H2]: (line: string) => line.startsWith('## '),
-        [HtmlTypeEnum.H3]: (line: string) => line.startsWith('### '),
-        [HtmlTypeEnum.H4]: (line: string) => line.startsWith('#### '),
-        [HtmlTypeEnum.H5]: (line: string) => line.startsWith('##### '),
-        [HtmlTypeEnum.UL]: (line: string) => line.startsWith('- '),
-        [HtmlTypeEnum.OL]: (line: string) => /^\d+\.\s/.test(line),
+        [HtmlTagEnum.H1]: (line: string) => line.startsWith('# '),
+        [HtmlTagEnum.H2]: (line: string) => line.startsWith('## '),
+        [HtmlTagEnum.H3]: (line: string) => line.startsWith('### '),
+        [HtmlTagEnum.H4]: (line: string) => line.startsWith('#### '),
+        [HtmlTagEnum.H5]: (line: string) => line.startsWith('##### '),
+        [HtmlTagEnum.UL]: (line: string) => line.startsWith('- '),
+        [HtmlTagEnum.OL]: (line: string) => /^\d+\.\s/.test(line),
     };
     for (const [lineType, check] of Object.entries(lineMapper)) {
         const result = check(line);
         if (!result) {
             continue;
         }
-        return lineType as HtmlTypeEnum;
+        return lineType as HtmlTagEnum;
     }
-    return HtmlTypeEnum.P;
+    return HtmlTagEnum.P;
 }

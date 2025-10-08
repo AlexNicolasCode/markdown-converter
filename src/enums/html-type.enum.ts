@@ -10,4 +10,5 @@ export enum HtmlTagEnum {
 	H5 = "h5",
 	BOLD = "strong",
 	LINK = "a",
+	PROGRAM = "PROGRAM",
 }

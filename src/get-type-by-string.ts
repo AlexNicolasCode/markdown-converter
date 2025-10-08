@@ -9,6 +9,7 @@ export const getTypeByString = (line: string): HtmlTagEnum => {
 		[HtmlTagEnum.H5]: (line: string) => line.startsWith("##### "),
 		[HtmlTagEnum.UL]: (line: string) => line.startsWith("- "),
 		[HtmlTagEnum.OL]: (line: string) => /^\d+\.\s/.test(line),
+		[HtmlTagEnum.PROGRAM]: (line: string) => line.startsWith("```"),
 	};
 	for (const [lineType, check] of Object.entries(lineMapper)) {
 		const result = check(line);

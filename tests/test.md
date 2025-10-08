@@ -29,7 +29,7 @@ It includes examples of lists, code blocks, tables, and even inline elements lik
 - Cherries 🍒
 
 ### Ordered List
-1. First item
+1. First **item**
 2. Second item
 3. Third item
 
@@ -46,4 +46,8 @@ It includes examples of lists, code blocks, tables, and even inline elements lik
 
 ## 3. Code Examples
 
-Here’s a simple JavaScript function:
+Here’s a simple JavaScript code:
+
+```js
+console.log("testing");
+```

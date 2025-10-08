@@ -1,5 +1,21 @@
 {
-    "compilerOptions": {
-        "lib": ["es2021"],
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "outDir": "dist",
+    "lib": [
+      "ES2021.String"
+    ],
+    "module": "commonjs",
+    "target": "es2019",
+    "noUnusedLocals": true,
+    "esModuleInterop": true,
+    "noImplicitAny": false,
+    "rootDirs": ["src", "tests"],
+    "baseUrl": "src",
+    "paths": {
+      "tests/*": ["../tests/*"],
+      "@/*": ["*"]
     }
+  },
+  "include": ["src"],
 }

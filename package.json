@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "lint": "npx @biomejs/biome format --write ./src",
     "test": "jest --config jest.config.js"
   },
   "keywords": [

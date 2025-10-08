@@ -1,1 +1,1 @@
-export * from './html-type.enum';
+export * from "./html-type.enum";

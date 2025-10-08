@@ -11,6 +11,7 @@ export const cleanStringByType = (lineType: HtmlTagEnum, line: string): string =
         [HtmlTagEnum.OL]: (line: string) => line.replace(/^\d+\.\s/, ''),
         [HtmlTagEnum.LI]: (line: string) => line,
         [HtmlTagEnum.P]: (line: string) => line,
+        [HtmlTagEnum.BOLD]: (line: string) => line,
     };
     const removeTypeIdentifier = lineMapper[lineType];
     if (!removeTypeIdentifier) {

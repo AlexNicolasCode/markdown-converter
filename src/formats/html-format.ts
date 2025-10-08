@@ -6,7 +6,7 @@ export type HtmlList = {
 }
 
 export type HtmlFormat = {
-    type: HtmlTagEnum;
-    content?: string;
-    list?: HtmlFormat[];
+  type: HtmlTagEnum;
+  content?: string;
+  childrens?: HtmlFormat[];
 }

@@ -1,4 +1,4 @@
-export const checkEmptyString = (content?: string) => {
+export const checkEmptyString = (content: string): boolean => {
     if (!content || content === '') {
         return true;
     }

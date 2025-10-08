@@ -1,35 +1,35 @@
 import { HtmlTagEnum } from "./enums/html-type.enum";
+import { extractElementByText } from "./extract-element-by-line";
 import { HtmlFormat } from "./formats";
 
 export const formatListElements = (unformattedHtmlElements: HtmlFormat[]): HtmlFormat[] => {
     const htmlElements: HtmlFormat[] = [];
-    const ulList: HtmlFormat[] = [];
-    const olList: HtmlFormat[] = [];
+    const lists: { ulList: HtmlFormat[], olList: HtmlFormat[] } = { ulList: [], olList: [] };
     for (const element of unformattedHtmlElements) {
         const isOl = element.type === HtmlTagEnum.OL;
         const isUl = element.type === HtmlTagEnum.UL;
         if (isUl) {
-            ulList.push({ type: HtmlTagEnum.LI, content: element.content });
+            lists.ulList.push({ type: HtmlTagEnum.LI, childrens: extractElementByText(element.type, element.content) });
             continue;
         }
         if (
-            ulList.length > 0 &&
+            lists.ulList.length > 0 &&
             !isUl
         ) {
-            htmlElements.push({ type: HtmlTagEnum.UL, list: ulList });
-            ulList.splice(0, ulList.length);
+            htmlElements.push({ type: HtmlTagEnum.UL, childrens: lists.ulList });
+            lists.ulList = [];
             continue;
         }
         if (isOl) {
-            olList.push({ type: HtmlTagEnum.LI, content: element.content });
+            lists.olList.push({ type: HtmlTagEnum.LI, childrens: extractElementByText(element.type, element.content) });
             continue;
         }
         if (
-            olList.length > 0 &&
+            lists.olList.length > 0 &&
             !isOl
         ) {
-            htmlElements.push({ type: HtmlTagEnum.OL, list: olList });
-            olList.splice(0, olList.length);
+            htmlElements.push({ type: HtmlTagEnum.OL, childrens: lists.olList });
+            lists.olList = [];
             continue;
         }
         htmlElements.push(element);

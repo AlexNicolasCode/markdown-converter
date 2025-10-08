@@ -16,7 +16,7 @@ export const formatListElements = (
 		if (isUl) {
 			lists.ulList.push({
 				type: HtmlTagEnum.LI,
-				childrens: extractElementByText(element.type, element.content),
+				childrens: extractElementByText(element.content),
 				props: [],
 			});
 			continue;
@@ -33,7 +33,7 @@ export const formatListElements = (
 		if (isOl) {
 			lists.olList.push({
 				type: HtmlTagEnum.LI,
-				childrens: extractElementByText(element.type, element.content),
+				childrens: extractElementByText(element.content),
 				props: [],
 			});
 			continue;

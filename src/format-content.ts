@@ -12,6 +12,6 @@ export const formatContent = (
 	if (checkEmptyString(cleanContent)) {
 		return [];
 	}
-	const childrens = extractElementByText(type, cleanContent);
+	const childrens = extractElementByText(cleanContent);
 	return childrens;
 };

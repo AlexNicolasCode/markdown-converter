@@ -5,13 +5,13 @@ import type { HtmlFormat } from "./formats/html-format";
 import { checkEmptyString } from "./utils";
 import {
 	extractBoldValues,
+	extractCodeValues,
 	extractLinkValues,
 	extractSpecialValueId,
 	type SpecialValue,
 } from "./extractors";
 
 export const extractElementByText = (
-	type: HtmlTagEnum,
 	line?: string,
 ): HtmlFormat[] => {
 	if (!line) {
@@ -19,6 +19,16 @@ export const extractElementByText = (
 	}
 	const id = uuidv4();
 	const specialValues: Array<SpecialValue> = [];
+	const codeValues = extractCodeValues(line);
+	for (const codeValue of codeValues) {
+		specialValues.push({
+			id,
+			type: HtmlTagEnum.PROGRAM,
+			value: codeValue.value,
+			props: codeValue.props,
+		});
+		line = `[[${id}]]`;
+	}
 	const boldValues = extractBoldValues(line);
 	for (const boldValue of boldValues) {
 		specialValues.push({
@@ -55,7 +65,7 @@ export const extractElementByText = (
 				? word.replaceAll(`[[${specialValue.id}]]`, specialValue.value)
 				: word;
 			tags.push({
-				type: HtmlTagEnum.LINK,
+				type: specialValue.type,
 				content,
 				props: specialValue.props,
 				childrens: [],

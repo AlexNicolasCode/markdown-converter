@@ -1,7 +1,7 @@
 import type { HtmlTagEnum } from "@/enums";
 
 export type SpecialValueProp = {
-	name: "href";
+	name: "href" | "language";
 	value: string;
 };
 

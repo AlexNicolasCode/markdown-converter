@@ -1,5 +1,5 @@
-import { HtmlTagEnum } from "../enums/html-type.enum"
+import { HtmlTagEnum } from "../enums/html-type.enum";
 
 export const checkListType = (type: HtmlTagEnum): boolean => {
-    return [HtmlTagEnum.UL, HtmlTagEnum.OL].includes(type);
-}
+	return [HtmlTagEnum.UL, HtmlTagEnum.OL].includes(type);
+};

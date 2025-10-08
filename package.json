@@ -12,6 +12,9 @@
     "JavaScript",
     "Formatter"
   ],
+  "exports": {
+    ".": "./src/index.ts"
+  },
   "author": "Alex Fernandes <contato.alexnicolas@gmail.com> (https://github.com/AlexNicolasCode)",
   "license": "ISC",
   "devDependencies": {
